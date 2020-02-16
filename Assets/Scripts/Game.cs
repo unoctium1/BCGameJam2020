@@ -13,6 +13,8 @@ public class Game : MonoBehaviour
 
 	List<WayPointWalker> walkers = new List<WayPointWalker>();
 
+	List<TowerBehavior> towers = new List<TowerBehavior>();
+
 	[SerializeField]
 	float spawnSpeed = 3f;
 
@@ -70,5 +72,10 @@ public class Game : MonoBehaviour
 		}
 
 		Physics2D.SyncTransforms();
+
+		for(int i = 0; i < towers.Count; i++)
+		{
+			towers[i].TowerUpdate();
+		}
 	}
 }

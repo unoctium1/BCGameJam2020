@@ -2,46 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerBehavior : MonoBehaviour
+public abstract class TowerBehavior : MonoBehaviour
 {
     [SerializeField, Range(1.5f, 10.5f)]
-    float targetingRange = 1.5f;
+    protected float targetingRange = 1.5f;
 
-    [SerializeField]
-    private float damage;
-
-	[SerializeField]
-	private int maxHits = 50;
-
-	TargetPoint target;
-	Collider2D[] buffer;
-
-	const int enemyLayerMask = 1 << 8;
-
-
-
-	public void Update()
+	protected bool AcquireTarget(out TargetPoint target)
 	{
-		if (TrackTarget() || AcquireTarget())
+		if (TargetPoint.FillBuffer(transform.localPosition, targetingRange))
 		{
-			Debug.Log("Acquired target!");
-		}
-	}
-
-	bool AcquireTarget()
-	{
-		int hits = Physics2D.OverlapCircleNonAlloc(transform.position, targetingRange, buffer, enemyLayerMask);
-		if (hits > 0)
-		{
-			target = buffer[0].GetComponent<TargetPoint>();
-			Debug.Assert(target != null, "Targeted non-enemy!", buffer[0]);
+			target = TargetPoint.RandomBuffered;
 			return true;
 		}
 		target = null;
 		return false;
 	}
 
-	bool TrackTarget()
+	protected bool TrackTarget(ref TargetPoint target)
 	{
 		if (target == null || !target.Enemy.IsValid)
 		{
@@ -58,13 +35,11 @@ public class TowerBehavior : MonoBehaviour
 		return true;
 	}
 
+	public abstract void TowerUpdate();
+
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.yellow;
-		Vector3 position = transform.localPosition;
+		Vector2 position = transform.localPosition;
 		Gizmos.DrawWireSphere(position, targetingRange);
-		if (target != null)
-		{
-			Gizmos.DrawLine(position, target.Position);
-		}
 	}
 }
