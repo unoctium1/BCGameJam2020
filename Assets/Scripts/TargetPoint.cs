@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Linq;
 
 public class TargetPoint : MonoBehaviour
 {
@@ -25,6 +26,20 @@ public class TargetPoint : MonoBehaviour
 		Debug.Assert(target != null, "Targeted non-enemy!", buffer[0]);
 		return target;
 	}
+
+    public static TargetPoint[] AllTargets(Vector2 position,float range)
+    {
+        TargetPoint[] points = new TargetPoint[100];
+        BufferedCount = Physics2D.OverlapCircleNonAlloc(
+            position, range, buffer, enemyLayerMask
+        );
+        foreach(var x in buffer)
+        {
+            points.Append(x.GetComponent<TargetPoint>());
+        }
+        return points;
+    }
+
 	public WayPointWalker Enemy { get; private set; }
 
 	public Vector3 Position => transform.position;
