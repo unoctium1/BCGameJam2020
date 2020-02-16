@@ -95,6 +95,7 @@ public class WayPointWalker : MonoBehaviour
             }
             else
             {
+                currentEnd.end.DealDamage();
                 WinBehavior();
                 return false;
             }

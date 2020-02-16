@@ -7,6 +7,8 @@ public class EndPoint : MonoBehaviour
     [SerializeField]
     private bool isDestination;
 
+    public Dial end = default;
+
     public StartPoint CorrespondingStartPoint { get; private set; } = null;
 
     private void Start()

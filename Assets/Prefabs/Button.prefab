@@ -101,6 +101,7 @@ MonoBehaviour:
   isPressed: 0
   towerType: 0
   towerKey: 0
+  tower: {fileID: 0}
 --- !u!61 &567733869517292366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -280,6 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pAudio: {fileID: 0}
+  audioSource: {fileID: 0}
+  time: 0
 --- !u!1 &4308146805816998737
 GameObject:
   m_ObjectHideFlags: 0

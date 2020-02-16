@@ -6,12 +6,12 @@ public class Game : MonoBehaviour
 
     public static Game instance;
 
-    [SerializeField]
-    private int lifes = 3;
-    public int Lives { get; set; }
     public float Score { get; set; }
 
     public int NextWaveEnemies { get; set; }
+
+    [SerializeField]
+    private GameObject phase1Canvas = default;
 
     private int wave = 0;
 
@@ -24,7 +24,7 @@ public class Game : MonoBehaviour
 	[SerializeField]
 	StartPoint[] startPoints;
 	[SerializeField]
-	EndPoint[] endPoints;
+	Dial[] endPoints;
 
 	[SerializeField]
 	EnemyFactory enemyFactory;
@@ -32,7 +32,7 @@ public class Game : MonoBehaviour
     [SerializeField]
     ButtonBehavior[] buttonBehaviors;
 
-
+    private int enemiesSpawned = 0;
 
 
     List<WayPointWalker> walkers = new List<WayPointWalker>();
@@ -58,7 +58,8 @@ public class Game : MonoBehaviour
                 selected.UnPressButton();
             }
             selected = value;
-            selected.PressButton(false);
+            if(selected != null)
+                selected.PressButton(false);
         }
     }
 
@@ -76,18 +77,24 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Lives = lifes;
         NextWaveEnemies = initialEnemies;
     }
 
     public void SetPhase2()
     {
-
+        phase1Canvas.SetActive(false);
+        wave++;
+        SelectedButton = null;
+        enemiesSpawned = 0;
+        isEnemyWavePhase = true;
+        Debug.Log("Enemy wave");
     }
 
     public void SetPhase1()
     {
-
+        phase1Canvas.SetActive(true);
+        NextWaveEnemies += enemyIncreasePerWave;
+        isEnemyWavePhase = false;
     }
 
     private void Update()
@@ -162,13 +169,29 @@ public class Game : MonoBehaviour
 
 	private void Phase2Update()
 	{
+        bool isGameOver = true;
+        for(int i = 0; i < endPoints.Length; i++)
+        {
+            if (!endPoints[i].IsBroken)
+            {
+                isGameOver = false;
+                break;
+            }
+        }
+
+        if (isGameOver)
+        {
+            Debug.Log("Game over");
+            //Do some shit
+        }
+
 		spawnProgress += spawnSpeed * Time.deltaTime;
-		while (spawnProgress >= 1f)
+		while (spawnProgress >= 1f && enemiesSpawned < NextWaveEnemies)
 		{
 			spawnProgress -= 1f;
 			walkers.Add(GetRandomWalker());
+            enemiesSpawned++;
 		}
-
 		for (int i = 0; i < walkers.Count; i++)
 		{
 			if (!walkers[i].UpdateWalker())
@@ -185,6 +208,11 @@ public class Game : MonoBehaviour
         for (int i = 0; i < towers.Count; i++)
         {
             towers[i].TowerUpdate();
+        }
+
+        if(walkers.Count == 0 && enemiesSpawned >= NextWaveEnemies)
+        {
+            SetPhase1();
         }
 
 
