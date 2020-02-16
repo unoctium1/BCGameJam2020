@@ -59,8 +59,14 @@ public class ButtonBehavior : MonoBehaviour
 
     public void OnMouseExit()
     {
-        if (Game.instance.Phase1)
+        if (Game.instance.Phase1 && Game.instance.SelectedButton != this)
             UnPressButton();
+    }
+
+    public void OnMouseDown()
+    {
+        if (Game.instance.Phase1)
+            Game.instance.SelectedButton = this;
     }
 
     public void UnPressButton()
@@ -76,16 +82,22 @@ public class ButtonBehavior : MonoBehaviour
     }
     public void TowerSpaceFires()
     {
-        #region sound part
-        PressButton(true);
-        if(tower != null)
+        if (Game.instance.Phase1)
         {
-            tower.StartFiring();
+            Game.instance.SelectedButton = this;
         }
-        PlaySound playSound = GetComponent<PlaySound>();
-        playSound.StartBeep();
-        #endregion
-
+        else
+        {
+            #region sound part
+            PressButton(true);
+            if (tower != null)
+            {
+                tower.StartFiring();
+            }
+            PlaySound playSound = GetComponent<PlaySound>();
+            playSound.StartBeep();
+            #endregion
+        }
     }
 
 

@@ -6,6 +6,21 @@ public class Game : MonoBehaviour
 
     public static Game instance;
 
+    [SerializeField]
+    private int lifes = 3;
+    public int Lives { get; set; }
+    public float Score { get; set; }
+
+    public int NextWaveEnemies { get; set; }
+
+    private int wave = 0;
+
+    [SerializeField]
+    private int initialEnemies;
+
+    [SerializeField]
+    private int enemyIncreasePerWave;
+
 	[SerializeField]
 	StartPoint[] startPoints;
 	[SerializeField]
@@ -32,6 +47,21 @@ public class Game : MonoBehaviour
     [SerializeField]
 	bool isEnemyWavePhase = false;
 
+    private ButtonBehavior selected;
+    public ButtonBehavior SelectedButton
+    {
+        get => selected;
+        set
+        {
+            if (value != selected && selected != null)
+            {
+                selected.UnPressButton();
+            }
+            selected = value;
+            selected.PressButton(false);
+        }
+    }
+
     public bool Phase1 => !isEnemyWavePhase;
 
 	private WayPointWalker GetRandomWalker()
@@ -46,52 +76,22 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Lives = lifes;
+        NextWaveEnemies = initialEnemies;
+    }
+
+    public void SetPhase2()
+    {
+
+    }
+
+    public void SetPhase1()
+    {
+
     }
 
     private void Update()
 	{
-        if (isEnemyWavePhase)
-		{
-			Phase2Update();
-		}
-		else
-		{
-			Phase1Update();
-		}
-
-	}
-
-	private void Phase1Update()
-	{
-
-	}
-
-	private void Phase2Update()
-	{
-		spawnProgress += spawnSpeed * Time.deltaTime;
-		while (spawnProgress >= 1f)
-		{
-			spawnProgress -= 1f;
-			walkers.Add(GetRandomWalker());
-		}
-
-		for (int i = 0; i < walkers.Count; i++)
-		{
-			if (!walkers[i].UpdateWalker())
-			{
-				int lastIndex = walkers.Count - 1;
-				WayPointWalker toDelete = walkers[i];
-				walkers[i] = walkers[lastIndex];
-				walkers.RemoveAt(lastIndex);
-				i -= 1;
-			}
-		}
-        Physics2D.SyncTransforms();
-
-        for (int i = 0; i < towers.Count; i++)
-        {
-            towers[i].TowerUpdate();
-        }
 
         #region Sound when its individual (commented)
         if (Input.GetKeyDown(KeyCode.Q))
@@ -143,6 +143,50 @@ public class Game : MonoBehaviour
             buttonBehaviors[11].TowerSpaceFires();
         }
         #endregion
+
+        if (isEnemyWavePhase)
+		{
+			Phase2Update();
+		}
+		else
+		{
+			Phase1Update();
+		}
+
+	}
+
+	private void Phase1Update()
+	{
+
+	}
+
+	private void Phase2Update()
+	{
+		spawnProgress += spawnSpeed * Time.deltaTime;
+		while (spawnProgress >= 1f)
+		{
+			spawnProgress -= 1f;
+			walkers.Add(GetRandomWalker());
+		}
+
+		for (int i = 0; i < walkers.Count; i++)
+		{
+			if (!walkers[i].UpdateWalker())
+			{
+				int lastIndex = walkers.Count - 1;
+				WayPointWalker toDelete = walkers[i];
+				walkers[i] = walkers[lastIndex];
+				walkers.RemoveAt(lastIndex);
+				i -= 1;
+			}
+		}
+        Physics2D.SyncTransforms();
+
+        for (int i = 0; i < towers.Count; i++)
+        {
+            towers[i].TowerUpdate();
+        }
+
 
     }
 
