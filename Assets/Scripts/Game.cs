@@ -12,10 +12,8 @@ public class Game : MonoBehaviour
 	EnemyFactory enemyFactory;
 
     [SerializeField]
-    TowerSpace[] towerSpaces;
+    ButtonBehavior[] buttonBehaviors;
 
-    [SerializeField]
-    PlaySound playSound;
 
 
 
@@ -85,62 +83,57 @@ public class Game : MonoBehaviour
         #endregion
 
         #region Sound when its individual (commented)
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    towerSpaces[0].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-        //    towerSpaces[1].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    towerSpaces[2].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.R))
-        //{
-        //    towerSpaces[3].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    towerSpaces[4].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    towerSpaces[5].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    towerSpaces[6].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    towerSpaces[7].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    towerSpaces[8].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.X))
-        //{
-        //    towerSpaces[9].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.C))
-        //{
-        //    towerSpaces[10].TowerSpaceFires();
-        //}
-        //if (Input.GetKeyDown(KeyCode.V))
-        //{
-        //    towerSpaces[11].TowerSpaceFires();
-        //}
-        #endregion
-
-        #region singular sound control
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            playSound.StartBeep();
+            buttonBehaviors[0].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            buttonBehaviors[1].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            buttonBehaviors[2].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            buttonBehaviors[3].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            buttonBehaviors[4].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            buttonBehaviors[5].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            buttonBehaviors[6].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            buttonBehaviors[7].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            buttonBehaviors[8].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            buttonBehaviors[9].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            buttonBehaviors[10].TowerSpaceFires();
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            buttonBehaviors[11].TowerSpaceFires();
         }
         #endregion
+
+
 
 
 

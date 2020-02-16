@@ -15,7 +15,7 @@ public class GameBoard : MonoBehaviour {
     const int size = 12;
 
     [SerializeField]
-    TowerSpace[] towerSpaces;
+    ButtonBehavior[] buttonBehaviors;
 
     [SerializeField]
     GameObject AudioListener;
@@ -25,7 +25,7 @@ public class GameBoard : MonoBehaviour {
         //Build Tower spaces
         for (int i = 0; i < 12; i++)
         {
-            towerSpaces[i].BuildTowerSpace();
+            buttonBehaviors[i].BuildTowerSpace();
         }
 
 	}

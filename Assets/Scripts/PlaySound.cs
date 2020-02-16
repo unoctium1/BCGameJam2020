@@ -22,15 +22,14 @@ public class PlaySound : MonoBehaviour
     public void StartBeep()
     {
         Debug.Log("start beep");
-        //StartCoroutine("Beep");
-        pAudio.enabled = true;
+        StartCoroutine("Beep");
     }
 
-    public IEnumerable Beep()
+    public IEnumerator Beep()
     {
         Debug.Log("in the coroutine");
-        //if (pAudio.enabled == false)
-        pAudio.enabled = true;
+        if (pAudio.enabled == false)
+            pAudio.enabled = true;
         yield return new WaitForSeconds(1);
         pAudio.enabled = false;
 

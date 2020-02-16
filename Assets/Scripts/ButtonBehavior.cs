@@ -2,6 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TowerType
+{
+    DamageSingular = 0,
+    DamageChain = 1,
+    DamagePenetration = 2,
+    Slowness = 4,
+    Effects = 5,
+    Paralysis = 6,
+    Poison = 7,
+    Powerup = 8
+}
+
 public class ButtonBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -14,6 +26,9 @@ public class ButtonBehavior : MonoBehaviour
 
     [SerializeField]
     bool isPressed;
+
+    public TowerType towerType;
+    public KeyCode towerKey;
 
     private void OnEnable()
     {
@@ -47,5 +62,25 @@ public class ButtonBehavior : MonoBehaviour
     {
         unpressed.gameObject.SetActive(!isPressed);
         depressed.gameObject.SetActive(isPressed);
+    }
+
+    public void TowerSpaceFires()
+    {
+        #region sound part
+        PlaySound playSound = GetComponent<PlaySound>();
+        playSound.StartBeep();
+        #endregion
+
+    }
+
+
+    public void BuildTowerSpace()
+    {
+
+    }
+
+    public void UpgradeTowerSpace()
+    {
+
     }
 }
