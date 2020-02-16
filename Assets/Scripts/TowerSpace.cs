@@ -18,7 +18,7 @@ public enum TowerType
 
 
 
-public class TowerSpace
+public class TowerSpace:MonoBehaviour
 {
     public TowerType towerType;
     public KeyCode towerKey;
@@ -26,6 +26,9 @@ public class TowerSpace
 
     public void TowerSpaceFires()
     {
+        #region sound part
+
+        #endregion
 
     }
 

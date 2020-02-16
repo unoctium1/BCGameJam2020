@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioLowPassFilter))]
+[RequireComponent(typeof(AudioSource))]
 public class ProceduralAudio : MonoBehaviour
 {
     private float sampling_frequency = 48000;

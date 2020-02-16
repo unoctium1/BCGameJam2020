@@ -8,8 +8,9 @@ public class PlaySound : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //pAudio = gameObject.GetComponent<ProceduralAudio>();
-        //pAudio.enabled = false;
+        pAudio = gameObject.GetComponent<ProceduralAudio>();
+        if (pAudio)
+            pAudio.enabled = false;
     }
 
     // Update is called once per frame
@@ -22,11 +23,11 @@ public class PlaySound : MonoBehaviour
 
     public IEnumerable Beep()
     {
-        //Debug.Log("in the coroutine");
-        //if (pAudio.enabled == false)
-        //    pAudio.enabled = true;
-        //yield return new WaitForSeconds(1);
-        //pAudio.enabled = false;
+        Debug.Log("in the coroutine");
+        if (pAudio.enabled == false)
+            pAudio.enabled = true;
+        yield return new WaitForSeconds(1);
+        pAudio.enabled = false;
         yield return null;
 
     }
