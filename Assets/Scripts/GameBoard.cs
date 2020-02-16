@@ -6,7 +6,7 @@ using System.Linq;
 public class GameBoard : MonoBehaviour {
 
 	[SerializeField]
-	Transform ground = default(Transform);
+	Transform ground = default;
 
     private int[] values;
     private bool[] keys;
@@ -20,15 +20,13 @@ public class GameBoard : MonoBehaviour {
     [SerializeField]
     GameObject AudioListener;
 
-	public void Initialize(int size)
+	public void Initialize()
 	{
-		ground.localScale = new Vector3(size, size, 1f);
         //Build Tower spaces
         for (int i = 0; i < 12; i++)
         {
             towerSpaces[i].BuildTowerSpace();
         }
-
 
 	}
 
