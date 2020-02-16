@@ -39,6 +39,7 @@ public class AudioSpectrum : MonoBehaviour
     public BandType bandType = BandType.TenBand;
     public float fallSpeed = 0.08f;
     public float sensibility = 8.0f;
+    public bool useListener = true;
     #endregion
 
     #region Private variables
@@ -48,6 +49,7 @@ public class AudioSpectrum : MonoBehaviour
     float[] meanLevels;
     float[] maxLevels;
     AudioSource source;
+    AudioListener listen;
     private float amplitudeHighest = 0.01f;
     #endregion
 
@@ -110,7 +112,8 @@ public class AudioSpectrum : MonoBehaviour
     #region Monobehaviour functions
     void Awake ()
     {
-        source = GetComponent<AudioSource>();
+        if (!useListener)
+            source = GetComponent<AudioSource>();
         CheckBuffers ();
     }
 
@@ -118,7 +121,12 @@ public class AudioSpectrum : MonoBehaviour
     {
         CheckBuffers ();
 
-        source.GetSpectrumData (rawSpectrum, 0, FFTWindow.BlackmanHarris);
+        if (!useListener)
+            source.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
+        else
+            AudioListener.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
+
+
 
         float[] middlefrequencies = middleFrequenciesForBands [(int)bandType];
         var bandwidth = bandwidthForBands [(int)bandType];
