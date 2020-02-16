@@ -47,26 +47,42 @@ public class Game : MonoBehaviour
         #region Walkers
         if (isEnemyWavePhase)
 		{
-			spawnProgress += spawnSpeed * Time.deltaTime;
-			while (spawnProgress >= 1f)
-			{
-				spawnProgress -= 1f;
-				walkers.Add(GetRandomWalker());
-			}
+			Phase2Update();
+		}
+		else
+		{
+			Phase1Update();
+		}
 
-			for (int i = 0; i < walkers.Count; i++)
+	}
+
+	private void Phase1Update()
+	{
+
+	}
+
+	private void Phase2Update()
+	{
+		spawnProgress += spawnSpeed * Time.deltaTime;
+		while (spawnProgress >= 1f)
+		{
+			spawnProgress -= 1f;
+			walkers.Add(GetRandomWalker());
+		}
+
+		for (int i = 0; i < walkers.Count; i++)
+		{
+			if (!walkers[i].UpdateWalker())
 			{
-				if (!walkers[i].UpdateWalker())
-				{
-					int lastIndex = walkers.Count - 1;
-					WayPointWalker toDelete = walkers[i];
-					walkers[i] = walkers[lastIndex];
-					walkers.RemoveAt(lastIndex);
-					i -= 1;
-					toDelete.EndBehavior();
-				}
+				int lastIndex = walkers.Count - 1;
+				WayPointWalker toDelete = walkers[i];
+				walkers[i] = walkers[lastIndex];
+				walkers.RemoveAt(lastIndex);
+				i -= 1;
+				toDelete.EndBehavior();
 			}
 		}
+<<<<<<< HEAD
         #endregion
 
         #region Sound when its individual (commented)
@@ -130,4 +146,7 @@ public class Game : MonoBehaviour
 
 
     }
+=======
+	}
+>>>>>>> master
 }

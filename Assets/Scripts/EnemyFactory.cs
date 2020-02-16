@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu]
-public class EnemyFactory : ScriptableObject
+public class EnemyFactory : GameObjectFactory
 
 {
     [SerializeField]
     WayPointWalker[] prefabs;
-	Scene scene;
 
 	List<WayPointWalker>[] pools;
 
@@ -20,28 +19,6 @@ public class EnemyFactory : ScriptableObject
 		{
 			pools[i] = new List<WayPointWalker>();
 		}
-	}
-
-	protected WayPointWalker CreateGameObjectInstance(WayPointWalker prefab)
-	{
-		if (!scene.isLoaded)
-		{
-			if (Application.isEditor)
-			{
-				scene = SceneManager.GetSceneByName(name);
-				if (!scene.isLoaded)
-				{
-					scene = SceneManager.CreateScene(name);
-				}
-			}
-			else
-			{
-				scene = SceneManager.CreateScene(name);
-			}
-		}
-		WayPointWalker instance = Instantiate(prefab);
-		SceneManager.MoveGameObjectToScene(instance.gameObject, scene);
-		return instance;
 	}
 
 	public WayPointWalker Get(int id)
