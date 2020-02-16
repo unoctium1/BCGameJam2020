@@ -58,10 +58,23 @@ public class Game : MonoBehaviour
                 selected.UnPressButton();
             }
             selected = value;
-            if(selected != null)
+            if (selected != null) {
                 selected.PressButton(false);
+                if (ActiveTowerToSpawn != null) {
+                    SpawnTowerOnButton(ActiveTowerToSpawn);
+                    ActiveTowerToSpawn = null;
+                    SelectedButton = null;
+                }
+            }
         }
     }
+
+    public void SpawnTowerOnButton(TowerBehavior tower)
+    {
+        towers.Add(SelectedButton.SpawnTower(tower));
+    }
+
+    public TowerBehavior ActiveTowerToSpawn { get; set; }
 
     public bool Phase1 => !isEnemyWavePhase;
 

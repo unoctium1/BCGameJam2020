@@ -44,7 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: aee1400da890c134f8283b890a0e4035, type: 3}
     - {fileID: 102900000, guid: d7c450a6973beaf4db8f48b07ce4e71a, type: 3}
-    totalSpriteSurfaceArea: 17687387
+    totalSpriteSurfaceArea: 15686262
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -144,7 +144,15 @@ SpriteAtlas:
   - {fileID: 867189838604510719, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 4197406895279560924, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 21300000, guid: da1611eeafb8e4f4297c5b84bea0f597, type: 3}
-  - {fileID: 21300000, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -6466429675877741610, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -2896873268198135197, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -1129526522281349673, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 8761586423198254345, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 5783263563259582983, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 6735465512786575720, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -7677227295665124824, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -8816964483051341370, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 4715785189793958515, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
   m_PackedSpriteNamesToIndex:
   - alan watts sprite sheet_5
   - alan watts sprite sheet_4
@@ -242,6 +250,14 @@ SpriteAtlas:
   - Theodore_4
   - Theodore_5
   - CRT screen mask
-  - Gerald
+  - Gerald_9
+  - Gerald_5
+  - Gerald_4
+  - Gerald_7
+  - Gerald_6
+  - Gerald_1
+  - Gerald_0
+  - Gerald_3
+  - Gerald_2
   m_Tag: SpriteAtlas
   m_IsVariant: 0
