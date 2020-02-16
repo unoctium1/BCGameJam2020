@@ -67,6 +67,7 @@ public class ButtonBehavior : MonoBehaviour
     public void TowerSpaceFires()
     {
         #region sound part
+        PressButton();
         PlaySound playSound = GetComponent<PlaySound>();
         playSound.StartBeep();
         #endregion
