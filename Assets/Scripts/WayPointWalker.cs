@@ -7,6 +7,7 @@ public class WayPointWalker : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    private float Health { get; set; }
     [SerializeField]
     private float health = 100f;
 
@@ -56,11 +57,12 @@ public class WayPointWalker : MonoBehaviour
     public void ApplyDamage(float damage)
     {
         Debug.Assert(damage >= 0f, "Negative damage applied.");
-        health -= damage;
+        Health -= damage;
     }
 
     public void Initialize(StartPoint start)
     {
+        Health = health;
         IsValid = true;
         progress = 0.00f;
         currStart = start;
@@ -72,7 +74,7 @@ public class WayPointWalker : MonoBehaviour
 
     public bool UpdateWalker()
     {
-        if(health <= 0)
+        if(Health <= 0)
         {
             IsValid = false;
             anim.StopPlayback();
@@ -93,6 +95,7 @@ public class WayPointWalker : MonoBehaviour
             }
             else
             {
+                WinBehavior();
                 return false;
             }
         }
@@ -101,7 +104,7 @@ public class WayPointWalker : MonoBehaviour
         return true;
     }
 
-    public void EndBehavior()
+    public void WinBehavior()
     {
         StartCoroutine(DestroyWalker());
     }

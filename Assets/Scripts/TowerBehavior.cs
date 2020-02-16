@@ -6,6 +6,9 @@ public abstract class TowerBehavior : MonoBehaviour
 { 
     [SerializeField, Range(1.5f, 10.5f)]
     protected float targetingRange = 1.5f;
+	[SerializeField, Range(.3f, 2f)]
+	protected float duration = 0.5f;
+	public bool IsFiring { get; set; }
 
 	protected bool AcquireTarget(out TargetPoint target)
 	{
@@ -33,6 +36,18 @@ public abstract class TowerBehavior : MonoBehaviour
 			return false;
 		}
 		return true;
+	}
+
+	public void StartFiring()
+	{
+		IsFiring = true;
+		StartCoroutine(StopFiring());
+	}
+
+	private IEnumerator StopFiring()
+	{
+		yield return new WaitForSeconds(duration);
+		IsFiring = false;
 	}
 
 	public abstract void TowerUpdate();

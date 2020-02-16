@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
+
+    public static Game instance;
+
 	[SerializeField]
 	StartPoint[] startPoints;
 	[SerializeField]
@@ -26,7 +29,10 @@ public class Game : MonoBehaviour
 
 	float spawnProgress = 0.0f;
 
-	bool isEnemyWavePhase = true;
+    [SerializeField]
+	bool isEnemyWavePhase = false;
+
+    public bool Phase1 => !isEnemyWavePhase;
 
 	private WayPointWalker GetRandomWalker()
 	{
@@ -37,9 +43,9 @@ public class Game : MonoBehaviour
 
 	}
 
-    private void Start()
+    private void Awake()
     {
-        
+        instance = this;
     }
 
     private void Update()
@@ -78,7 +84,6 @@ public class Game : MonoBehaviour
 				walkers[i] = walkers[lastIndex];
 				walkers.RemoveAt(lastIndex);
 				i -= 1;
-				toDelete.EndBehavior();
 			}
 		}
         Physics2D.SyncTransforms();

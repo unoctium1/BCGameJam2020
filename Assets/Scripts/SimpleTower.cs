@@ -6,18 +6,25 @@ public class SimpleTower : TowerBehavior
 {
 	[SerializeField, Range(1f, 100f)]
 	float damagePerSecond = 10f;
+
 	[SerializeField]
 	TargetPoint target;
 
 	[SerializeField]
 	private LineRenderer line = default;
 
+	
+
 	public override void TowerUpdate()
 	{
 		if (TrackTarget(ref target) || AcquireTarget(out target))
 		{
-			Debug.Log("Gotcha");
-			Shoot();
+			if(IsFiring)
+				Shoot();
+			else
+			{
+				line.enabled = false;
+			}
 		}
 		else
 		{
