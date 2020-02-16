@@ -34,22 +34,23 @@ public class ButtonBehavior : MonoBehaviour
     private void OnEnable()
     {
         if (isPressed)
-            PressButton();
+            PressButton(false);
         else
             UnPressButton();
     }
 
-    public void PressButton()
+    public void PressButton(bool unPressAfter)
     {
         isPressed = true;
         unpressed.gameObject.SetActive(false);
         depressed.gameObject.SetActive(true);
-        //Invoke("UnPressButton", 1f);
+        if(unPressAfter)
+            Invoke("UnPressButton", 1f);
     }
 
     public void OnMouseOver()
     {
-        PressButton();
+        PressButton(false);
     }
 
     public void OnMouseExit()
@@ -72,6 +73,7 @@ public class ButtonBehavior : MonoBehaviour
     public void TowerSpaceFires()
     {
         #region sound part
+        PressButton(true);
         PlaySound playSound = GetComponent<PlaySound>();
         playSound.StartBeep();
         #endregion

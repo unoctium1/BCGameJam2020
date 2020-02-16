@@ -44,7 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: aee1400da890c134f8283b890a0e4035, type: 3}
     - {fileID: 102900000, guid: d7c450a6973beaf4db8f48b07ce4e71a, type: 3}
-    totalSpriteSurfaceArea: 6497115
+    totalSpriteSurfaceArea: 9993051
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -60,6 +60,7 @@ SpriteAtlas:
   - {fileID: 1369538270167954338, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 3607535075180461555, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 21300000, guid: 4f49b0545daa65644814a4fb43e6cf7d, type: 3}
+  - {fileID: 21300000, guid: bcab1ba7cf6928b4dad0c17e1abad498, type: 3}
   - {fileID: 21300000, guid: 84906c9a47f71114e8b793aa58ad6d6c, type: 3}
   - {fileID: 21300018, guid: 8d0ef56c3ad8c384388b1eb90b533b2b, type: 3}
   - {fileID: 21300016, guid: 8d0ef56c3ad8c384388b1eb90b533b2b, type: 3}
@@ -139,6 +140,7 @@ SpriteAtlas:
   - alan watts sprite sheet_8
   - alan watts sprite sheet_10
   - Square
+  - crt
   - arrow
   - AlanWatts_9
   - AlanWatts_8
