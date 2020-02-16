@@ -17,6 +17,9 @@ public class Game : MonoBehaviour
 	float spawnSpeed = 3f;
 
 	float spawnProgress = 0.0f;
+
+	bool isEnemyWavePhase = false;
+
 	private WayPointWalker GetRandomWalker()
 	{
 		StartPoint s = startPoints[Random.Range(0, startPoints.Length)];
@@ -28,23 +31,26 @@ public class Game : MonoBehaviour
 
 	private void Update()
 	{
-		spawnProgress += spawnSpeed * Time.deltaTime;
-		while (spawnProgress >= 1f)
+		if (isEnemyWavePhase)
 		{
-			spawnProgress -= 1f;
-			walkers.Add(GetRandomWalker());
-		}
-
-		for (int i = 0; i < walkers.Count; i++)
-		{
-			if (!walkers[i].UpdateWalker())
+			spawnProgress += spawnSpeed * Time.deltaTime;
+			while (spawnProgress >= 1f)
 			{
-				int lastIndex = walkers.Count - 1;
-				WayPointWalker toDelete = walkers[i];
-				walkers[i] = walkers[lastIndex];
-				walkers.RemoveAt(lastIndex);
-				i -= 1;
-				toDelete.EndBehavior();
+				spawnProgress -= 1f;
+				walkers.Add(GetRandomWalker());
+			}
+
+			for (int i = 0; i < walkers.Count; i++)
+			{
+				if (!walkers[i].UpdateWalker())
+				{
+					int lastIndex = walkers.Count - 1;
+					WayPointWalker toDelete = walkers[i];
+					walkers[i] = walkers[lastIndex];
+					walkers.RemoveAt(lastIndex);
+					i -= 1;
+					toDelete.EndBehavior();
+				}
 			}
 		}
 
