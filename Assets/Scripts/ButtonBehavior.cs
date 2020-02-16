@@ -31,6 +31,9 @@ public class ButtonBehavior : MonoBehaviour
     public TowerType towerType;
     public KeyCode towerKey;
 
+    [SerializeField]
+    public TowerBehavior tower;
+
     private void OnEnable()
     {
         if (isPressed)
@@ -50,17 +53,18 @@ public class ButtonBehavior : MonoBehaviour
 
     public void OnMouseOver()
     {
-        PressButton(false);
+        if(Game.instance.Phase1)
+            PressButton(false);
     }
 
     public void OnMouseExit()
     {
-        UnPressButton();
+        if (Game.instance.Phase1)
+            UnPressButton();
     }
 
     public void UnPressButton()
     {
-        isPressed = false;
         unpressed.gameObject.SetActive(true);
         depressed.gameObject.SetActive(false);
     }
@@ -74,6 +78,10 @@ public class ButtonBehavior : MonoBehaviour
     {
         #region sound part
         PressButton(true);
+        if(tower != null)
+        {
+            tower.StartFiring();
+        }
         PlaySound playSound = GetComponent<PlaySound>();
         playSound.StartBeep();
         #endregion

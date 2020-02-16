@@ -21,7 +21,7 @@ public class PlaySound : MonoBehaviour
         if (pAudio.enabled)
         {
             pAudio.enabled = false;
-            Debug.Log("turned sound off initially");
+            //Debug.Log("turned sound off initially");
         }
 
     }
@@ -29,13 +29,12 @@ public class PlaySound : MonoBehaviour
     // Update is called once per frame
     public void StartBeep()
     {
-        Debug.Log("start beep");
+        //Debug.Log("start beep");
         StartCoroutine("Beep");
     }
 
     public IEnumerator Beep()
     {
-        Debug.Log("in the coroutine");
         if (audioSource.enabled == false)
         {
             audioSource.enabled = true;

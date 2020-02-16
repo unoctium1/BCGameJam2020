@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetingRange: 3
-  damagePerSecond: 10
+  duration: 0.5
+  damagePerSecond: 20
   target: {fileID: 0}
   line: {fileID: 2318761900823809040}
 --- !u!120 &2318761900823809040
@@ -97,7 +98,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.22875786
         inSlope: 0
         outSlope: 0
         tangentMode: 0
