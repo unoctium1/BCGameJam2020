@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 4096
+      m_MaxTextureSize: 8192
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 1
@@ -44,15 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: aee1400da890c134f8283b890a0e4035, type: 3}
     - {fileID: 102900000, guid: d7c450a6973beaf4db8f48b07ce4e71a, type: 3}
-<<<<<<< HEAD
-    totalSpriteSurfaceArea: 15686262
-=======
-<<<<<<< Updated upstream
-    totalSpriteSurfaceArea: 9993051
-=======
-    totalSpriteSurfaceArea: 17661166
->>>>>>> Stashed changes
->>>>>>> towers
+    totalSpriteSurfaceArea: 35862007
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -69,7 +61,20 @@ SpriteAtlas:
   - {fileID: -2931773607948801607, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 1369538270167954338, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 3607535075180461555, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
+  - {fileID: 21300000, guid: dd440f52b40f53e44a3da373dfa88245, type: 3}
   - {fileID: 21300000, guid: 4f49b0545daa65644814a4fb43e6cf7d, type: 3}
+  - {fileID: 21300000, guid: 15a6e835e39d8a3428cfed368b9cf230, type: 3}
+  - {fileID: 21300000, guid: 37b147555a34c7e418da64e19ddb786d, type: 3}
+  - {fileID: 21300000, guid: 524a606579a21ba4083daff53bd132d7, type: 3}
+  - {fileID: 21300000, guid: 7b060295a21baba4eb455e7578450d73, type: 3}
+  - {fileID: 21300000, guid: 4bb0292601b4b8f4fb679916b93a5799, type: 3}
+  - {fileID: 2651074202725614176, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: 5021785355687701797, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: -5224476531211957881, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: -6834605482942039530, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: 270565022901797040, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: 805589088757455169, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
+  - {fileID: 6043495240317750872, guid: dedc12670e262a743badb9efaedfb12e, type: 3}
   - {fileID: 21300000, guid: bcab1ba7cf6928b4dad0c17e1abad498, type: 3}
   - {fileID: 4294496428159917417, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
   - {fileID: 977661479829558958, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
@@ -161,6 +166,8 @@ SpriteAtlas:
   - {fileID: -5979874275896412372, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 867189838604510719, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 4197406895279560924, guid: da66231df89b5704fbc8a8db25730674, type: 3}
+  - {fileID: 21300000, guid: 2fcc532e4d54dca4c85b913e1448260d, type: 3}
+  - {fileID: 21300000, guid: 49ea663eb31bbd34381ff1dbe61556ca, type: 3}
   - {fileID: 21300000, guid: da1611eeafb8e4f4297c5b84bea0f597, type: 3}
   - {fileID: -6466429675877741610, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
   - {fileID: -2896873268198135197, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
@@ -185,7 +192,20 @@ SpriteAtlas:
   - alan watts sprite sheet_9
   - alan watts sprite sheet_8
   - alan watts sprite sheet_10
+  - 'vaporwave top '
   - Square
+  - Circle
+  - Lofi_
+  - Lofi_2
+  - scan-lines-png-9
+  - vaporwave2
+  - tower designs_2
+  - tower designs_3
+  - tower designs_0
+  - tower designs_1
+  - tower designs_6
+  - tower designs_4
+  - tower designs_5
   - crt
   - Edith_11
   - Edith_4
@@ -277,6 +297,8 @@ SpriteAtlas:
   - Theodore_7
   - Theodore_4
   - Theodore_5
+  - Lofi_3
+  - bottom vaporwave grid
   - CRT screen mask
   - Gerald_9
   - Gerald_5

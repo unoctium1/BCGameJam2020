@@ -64,7 +64,7 @@ public class Game : MonoBehaviour
             selected = value;
             if (selected != null) {
                 selected.PressButton(false);
-                if (ActiveTowerToSpawn != null) {
+                if (ActiveTowerToSpawn != null && SelectedButton.tower == null) {
                     SpawnTowerOnButton(ActiveTowerToSpawn);
                     ActiveTowerToSpawn = null;
                     SelectedButton = null;
@@ -75,7 +75,8 @@ public class Game : MonoBehaviour
 
     public void SpawnTowerOnButton(TowerBehavior tower)
     {
-        towers.Add(SelectedButton.SpawnTower(tower));
+        if(SelectedButton.tower == null)
+            towers.Add(SelectedButton.SpawnTower(tower));
     }
 
     public TowerBehavior ActiveTowerToSpawn { get; set; }

@@ -47,13 +47,13 @@ public class TowerSpawner : MonoBehaviour
 
     public void SpawnCluster() => TrySpawn(3);
 
-    private void Update()
+    /*private void Update()
     {
         if(Game.instance.ActiveTowerToSpawn != null)
         {
-            Game.instance.ActiveTowerToSpawn.transform.position = Input.mousePosition;
+            Game.instance.ActiveTowerToSpawn.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-    }
+    }*/
 
 
 }

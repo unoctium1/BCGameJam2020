@@ -15,9 +15,14 @@ public class ChainTower : TowerBehavior
 
 	[SerializeField]
 	private LineRenderer line = default;
-    private LineRenderer line2 = default;
+	[SerializeField]
+	private LineRenderer line2 = default;
 
-	
+	private void OnEnable()
+	{
+		line.enabled = false;
+		line2.enabled = false;
+	}
 
 	public override void TowerUpdate()
 	{

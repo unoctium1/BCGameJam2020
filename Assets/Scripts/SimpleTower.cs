@@ -13,7 +13,10 @@ public class SimpleTower : TowerBehavior
 	[SerializeField]
 	private LineRenderer line = default;
 
-	
+	private void OnEnable()
+	{
+		line.enabled = false;
+	}
 
 	public override void TowerUpdate()
 	{
