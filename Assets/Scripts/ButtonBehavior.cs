@@ -42,6 +42,14 @@ public class ButtonBehavior : MonoBehaviour
             UnPressButton();
     }
 
+    public TowerBehavior SpawnTower(TowerBehavior prefab)
+    {
+        TowerBehavior tower = Instantiate(prefab, towerBase);
+        tower.transform.localPosition = Vector3.zero;
+        this.tower = tower;
+        return tower;
+    }
+
     public void PressButton(bool unPressAfter)
     {
         isPressed = true;

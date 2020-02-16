@@ -44,7 +44,7 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: aee1400da890c134f8283b890a0e4035, type: 3}
     - {fileID: 102900000, guid: d7c450a6973beaf4db8f48b07ce4e71a, type: 3}
-    totalSpriteSurfaceArea: 9993051
+    totalSpriteSurfaceArea: 15686262
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -62,6 +62,22 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4f49b0545daa65644814a4fb43e6cf7d, type: 3}
   - {fileID: 21300000, guid: bcab1ba7cf6928b4dad0c17e1abad498, type: 3}
   - {fileID: 21300000, guid: 84906c9a47f71114e8b793aa58ad6d6c, type: 3}
+  - {fileID: -5662007422927484889, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -6803488741268343020, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -5207231776682384544, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -8533962960574808602, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -7233381385078609286, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -8717975482313926904, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: 428769192662469898, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -1761608541376497799, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: 4865651850653354526, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: 8338297180362019975, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -7102572537394114508, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -9170676271271082056, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: 6176696409724508548, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: 4882864879891092273, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -2251286169667279369, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
+  - {fileID: -5061391117312504275, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
   - {fileID: 21300018, guid: 8d0ef56c3ad8c384388b1eb90b533b2b, type: 3}
   - {fileID: 21300016, guid: 8d0ef56c3ad8c384388b1eb90b533b2b, type: 3}
   - {fileID: 21300010, guid: 8d0ef56c3ad8c384388b1eb90b533b2b, type: 3}
@@ -127,6 +143,16 @@ SpriteAtlas:
   - {fileID: -5979874275896412372, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 867189838604510719, guid: da66231df89b5704fbc8a8db25730674, type: 3}
   - {fileID: 4197406895279560924, guid: da66231df89b5704fbc8a8db25730674, type: 3}
+  - {fileID: 21300000, guid: da1611eeafb8e4f4297c5b84bea0f597, type: 3}
+  - {fileID: -6466429675877741610, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -2896873268198135197, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -1129526522281349673, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 8761586423198254345, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 5783263563259582983, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 6735465512786575720, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -7677227295665124824, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: -8816964483051341370, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
+  - {fileID: 4715785189793958515, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
   m_PackedSpriteNamesToIndex:
   - alan watts sprite sheet_5
   - alan watts sprite sheet_4
@@ -142,6 +168,22 @@ SpriteAtlas:
   - Square
   - crt
   - arrow
+  - sprite sheet_8
+  - sprite sheet_9
+  - sprite sheet_0
+  - sprite sheet_1
+  - sprite sheet_2
+  - sprite sheet_3
+  - sprite sheet_4
+  - sprite sheet_5
+  - sprite sheet_6
+  - sprite sheet_7
+  - sprite sheet_13
+  - sprite sheet_12
+  - sprite sheet_11
+  - sprite sheet_10
+  - sprite sheet_15
+  - sprite sheet_14
   - AlanWatts_9
   - AlanWatts_8
   - AlanWatts_5
@@ -207,5 +249,15 @@ SpriteAtlas:
   - Theodore_7
   - Theodore_4
   - Theodore_5
+  - CRT screen mask
+  - Gerald_9
+  - Gerald_5
+  - Gerald_4
+  - Gerald_7
+  - Gerald_6
+  - Gerald_1
+  - Gerald_0
+  - Gerald_3
+  - Gerald_2
   m_Tag: SpriteAtlas
   m_IsVariant: 0
