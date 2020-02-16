@@ -19,11 +19,6 @@ public class StartPoint : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy()
-    {
-        //todo
-    }
-
     public static Vector2 LerpStartEnd(StartPoint s, EndPoint e, float t)
     {
         return Vector2.LerpUnclamped(s.transform.position, e.transform.position, t);
