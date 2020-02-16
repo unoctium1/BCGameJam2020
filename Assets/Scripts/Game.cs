@@ -1,16 +1,52 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
+	[SerializeField]
+	StartPoint[] startPoints;
+	[SerializeField]
+	EndPoint[] endPoints;
 
 	[SerializeField]
-	int boardSize = 11;
+	EnemyFactory enemyFactory;
+
+	List<WayPointWalker> walkers = new List<WayPointWalker>();
 
 	[SerializeField]
-	GameBoard board = default(GameBoard);
+	float spawnSpeed = 3f;
 
-	void Awake()
+	float spawnProgress = 0.0f;
+	private WayPointWalker GetRandomWalker()
 	{
-		board.Initialize(boardSize);
+		StartPoint s = startPoints[Random.Range(0, startPoints.Length)];
+		WayPointWalker w = enemyFactory.GetRandom();
+		w.Initialize(s);
+		return w;
+
+	}
+
+	private void Update()
+	{
+		spawnProgress += spawnSpeed * Time.deltaTime;
+		while (spawnProgress >= 1f)
+		{
+			spawnProgress -= 1f;
+			walkers.Add(GetRandomWalker());
+		}
+
+		for (int i = 0; i < walkers.Count; i++)
+		{
+			if (!walkers[i].UpdateWalker())
+			{
+				int lastIndex = walkers.Count - 1;
+				WayPointWalker toDelete = walkers[i];
+				walkers[i] = walkers[lastIndex];
+				walkers.RemoveAt(lastIndex);
+				i -= 1;
+				toDelete.EndBehavior();
+			}
+		}
+
 	}
 }
