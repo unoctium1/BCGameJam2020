@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
 
 	float spawnProgress = 0.0f;
 
-	bool isEnemyWavePhase = false;
+	bool isEnemyWavePhase = true;
 
 	private WayPointWalker GetRandomWalker()
 	{
@@ -68,5 +68,7 @@ public class Game : MonoBehaviour
 				toDelete.EndBehavior();
 			}
 		}
+
+		Physics2D.SyncTransforms();
 	}
 }

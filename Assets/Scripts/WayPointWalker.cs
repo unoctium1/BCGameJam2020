@@ -18,6 +18,8 @@ public class WayPointWalker : MonoBehaviour
     private EnemyFactory originFactory;
     private int id = int.MinValue;
 
+    public bool IsValid { get; set; }
+
     public EnemyFactory OriginFactory
     {
         get => originFactory;
@@ -50,6 +52,7 @@ public class WayPointWalker : MonoBehaviour
 
     public void Initialize(StartPoint start)
     {
+        IsValid = true;
         progress = 0.00f;
         currStart = start;
         currentEnd = currStart.GetEnd();
@@ -89,6 +92,7 @@ public class WayPointWalker : MonoBehaviour
 
     private IEnumerator DestroyWalker()
     {
+        IsValid = false;
         transform.position = currentEnd.transform.position;
         anim.SetTrigger("setIdle");
         yield return new WaitForSeconds(3f);
