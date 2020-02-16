@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class TowerBehavior : MonoBehaviour
-{
+{ 
     [SerializeField, Range(1.5f, 10.5f)]
     protected float targetingRange = 1.5f;
 
@@ -25,7 +25,7 @@ public abstract class TowerBehavior : MonoBehaviour
 			return false;
 		}
 
-		Vector2 a = transform.localPosition;
+		Vector2 a = transform.position;
 		Vector2 b = target.Position;
 		if (Vector2.Distance(a, b) > targetingRange + 0.125f)
 		{
@@ -39,7 +39,7 @@ public abstract class TowerBehavior : MonoBehaviour
 
 	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.yellow;
-		Vector2 position = transform.localPosition;
+		Vector2 position = transform.position;
 		Gizmos.DrawWireSphere(position, targetingRange);
 	}
 }

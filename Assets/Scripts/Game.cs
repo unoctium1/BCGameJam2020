@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
 
 
     List<WayPointWalker> walkers = new List<WayPointWalker>();
-
+    [SerializeField]
 	List<TowerBehavior> towers = new List<TowerBehavior>();
 
 	[SerializeField]

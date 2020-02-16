@@ -29,6 +29,7 @@ public class SimpleTower : TowerBehavior
 	{
 		line.enabled = true;
 		Vector3 point = target.Position;
+		line.SetPosition(0, this.transform.position);
 		line.SetPosition(1, point);
 		target.Enemy.ApplyDamage(damagePerSecond * Time.deltaTime);
 	}
