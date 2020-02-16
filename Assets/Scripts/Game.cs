@@ -19,6 +19,8 @@ public class Game : MonoBehaviour
 
     List<WayPointWalker> walkers = new List<WayPointWalker>();
 
+	List<TowerBehavior> towers = new List<TowerBehavior>();
+
 	[SerializeField]
 	float spawnSpeed = 3f;
 
@@ -42,7 +44,6 @@ public class Game : MonoBehaviour
 
     private void Update()
 	{
-        #region Walkers
         if (isEnemyWavePhase)
 		{
 			Phase2Update();
@@ -80,7 +81,12 @@ public class Game : MonoBehaviour
 				toDelete.EndBehavior();
 			}
 		}
-        #endregion
+        Physics2D.SyncTransforms();
+
+        for (int i = 0; i < towers.Count; i++)
+        {
+            towers[i].TowerUpdate();
+        }
 
         #region Sound when its individual (commented)
         if (Input.GetKeyDown(KeyCode.Q))
@@ -133,10 +139,7 @@ public class Game : MonoBehaviour
         }
         #endregion
 
-
-
-
-
     }
 
+		
 }

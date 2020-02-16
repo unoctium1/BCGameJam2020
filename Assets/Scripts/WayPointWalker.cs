@@ -7,6 +7,10 @@ public class WayPointWalker : MonoBehaviour
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float health = 100f;
+
+
     private StartPoint currStart;
     private EndPoint currentEnd;
 
@@ -17,6 +21,8 @@ public class WayPointWalker : MonoBehaviour
     private Animator anim;
     private EnemyFactory originFactory;
     private int id = int.MinValue;
+
+    public bool IsValid { get; set; }
 
     public EnemyFactory OriginFactory
     {
@@ -47,9 +53,15 @@ public class WayPointWalker : MonoBehaviour
         }
     }
 
+    public void ApplyDamage(float damage)
+    {
+        Debug.Assert(damage >= 0f, "Negative damage applied.");
+        health -= damage;
+    }
 
     public void Initialize(StartPoint start)
     {
+        IsValid = true;
         progress = 0.00f;
         currStart = start;
         currentEnd = currStart.GetEnd();
@@ -60,6 +72,13 @@ public class WayPointWalker : MonoBehaviour
 
     public bool UpdateWalker()
     {
+        if(health <= 0)
+        {
+            IsValid = false;
+            anim.StopPlayback();
+            OriginFactory.Reclaim(this);
+            return false;
+        }
         progress += Time.deltaTime * speed;
         while (progress >= 1f)
         {
@@ -89,6 +108,7 @@ public class WayPointWalker : MonoBehaviour
 
     private IEnumerator DestroyWalker()
     {
+        IsValid = false;
         transform.position = currentEnd.transform.position;
         anim.SetTrigger("setIdle");
         yield return new WaitForSeconds(3f);

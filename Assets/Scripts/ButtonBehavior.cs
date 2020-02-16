@@ -14,6 +14,7 @@ public enum TowerType
     Powerup = 8
 }
 
+[SelectionBase]
 public class ButtonBehavior : MonoBehaviour
 {
     [SerializeField]
@@ -38,20 +39,25 @@ public class ButtonBehavior : MonoBehaviour
             UnPressButton();
     }
 
-    private void OnMouseDown()
-    {
-        PressButton();
-    }
-
-    void PressButton()
+    public void PressButton()
     {
         isPressed = true;
         unpressed.gameObject.SetActive(false);
         depressed.gameObject.SetActive(true);
-        Invoke("UnPressButton", 1f);
+        //Invoke("UnPressButton", 1f);
     }
 
-    void UnPressButton()
+    public void OnMouseOver()
+    {
+        PressButton();
+    }
+
+    public void OnMouseExit()
+    {
+        UnPressButton();
+    }
+
+    public void UnPressButton()
     {
         isPressed = false;
         unpressed.gameObject.SetActive(true);
@@ -63,7 +69,6 @@ public class ButtonBehavior : MonoBehaviour
         unpressed.gameObject.SetActive(!isPressed);
         depressed.gameObject.SetActive(isPressed);
     }
-
     public void TowerSpaceFires()
     {
         #region sound part
