@@ -11,14 +11,22 @@ public class Game : MonoBehaviour
 	[SerializeField]
 	EnemyFactory enemyFactory;
 
-	List<WayPointWalker> walkers = new List<WayPointWalker>();
+    [SerializeField]
+    TowerSpace[] towerSpaces;
+
+    [SerializeField]
+    PlaySound playSound;
+
+
+
+    List<WayPointWalker> walkers = new List<WayPointWalker>();
 
 	[SerializeField]
 	float spawnSpeed = 3f;
 
 	float spawnProgress = 0.0f;
 
-	bool isEnemyWavePhase = false;
+	bool isEnemyWavePhase = true;
 
 	private WayPointWalker GetRandomWalker()
 	{
@@ -29,9 +37,15 @@ public class Game : MonoBehaviour
 
 	}
 
-	private void Update()
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
 	{
-		if (isEnemyWavePhase)
+        #region Walkers
+        if (isEnemyWavePhase)
 		{
 			spawnProgress += spawnSpeed * Time.deltaTime;
 			while (spawnProgress >= 1f)
@@ -53,6 +67,67 @@ public class Game : MonoBehaviour
 				}
 			}
 		}
+        #endregion
 
-	}
+        #region Sound when its individual (commented)
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    towerSpaces[0].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    towerSpaces[1].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    towerSpaces[2].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    towerSpaces[3].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    towerSpaces[4].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    towerSpaces[5].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    towerSpaces[6].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    towerSpaces[7].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    towerSpaces[8].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    towerSpaces[9].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    towerSpaces[10].TowerSpaceFires();
+        //}
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    towerSpaces[11].TowerSpaceFires();
+        //}
+        #endregion
+
+        #region singular sound control
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playSound.StartBeep();
+        }
+        #endregion
+
+
+
+    }
 }
