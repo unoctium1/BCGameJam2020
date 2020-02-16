@@ -33,26 +33,40 @@ public class Game : MonoBehaviour
 	{
 		if (isEnemyWavePhase)
 		{
-			spawnProgress += spawnSpeed * Time.deltaTime;
-			while (spawnProgress >= 1f)
-			{
-				spawnProgress -= 1f;
-				walkers.Add(GetRandomWalker());
-			}
-
-			for (int i = 0; i < walkers.Count; i++)
-			{
-				if (!walkers[i].UpdateWalker())
-				{
-					int lastIndex = walkers.Count - 1;
-					WayPointWalker toDelete = walkers[i];
-					walkers[i] = walkers[lastIndex];
-					walkers.RemoveAt(lastIndex);
-					i -= 1;
-					toDelete.EndBehavior();
-				}
-			}
+			Phase2Update();
+		}
+		else
+		{
+			Phase1Update();
 		}
 
+	}
+
+	private void Phase1Update()
+	{
+
+	}
+
+	private void Phase2Update()
+	{
+		spawnProgress += spawnSpeed * Time.deltaTime;
+		while (spawnProgress >= 1f)
+		{
+			spawnProgress -= 1f;
+			walkers.Add(GetRandomWalker());
+		}
+
+		for (int i = 0; i < walkers.Count; i++)
+		{
+			if (!walkers[i].UpdateWalker())
+			{
+				int lastIndex = walkers.Count - 1;
+				WayPointWalker toDelete = walkers[i];
+				walkers[i] = walkers[lastIndex];
+				walkers.RemoveAt(lastIndex);
+				i -= 1;
+				toDelete.EndBehavior();
+			}
+		}
 	}
 }
