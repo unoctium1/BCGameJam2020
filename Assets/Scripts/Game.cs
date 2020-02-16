@@ -48,6 +48,10 @@ public class Game : MonoBehaviour
 	bool isEnemyWavePhase = false;
 
     private ButtonBehavior selected;
+
+    [SerializeField]
+    public AudioSpectrum spect;
+
     public ButtonBehavior SelectedButton
     {
         get => selected;

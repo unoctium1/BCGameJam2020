@@ -44,10 +44,20 @@ SpriteAtlas:
     packables:
     - {fileID: 102900000, guid: aee1400da890c134f8283b890a0e4035, type: 3}
     - {fileID: 102900000, guid: d7c450a6973beaf4db8f48b07ce4e71a, type: 3}
+<<<<<<< HEAD
     totalSpriteSurfaceArea: 15686262
+=======
+<<<<<<< Updated upstream
+    totalSpriteSurfaceArea: 9993051
+=======
+    totalSpriteSurfaceArea: 17661166
+>>>>>>> Stashed changes
+>>>>>>> towers
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: -2350491997384890722, guid: 8f03fc90f1d3611469c6a5e05d9c2149, type: 3}
+  - {fileID: -8113173321044795714, guid: 8f03fc90f1d3611469c6a5e05d9c2149, type: 3}
   - {fileID: 5405574337935786000, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 1165043980111854250, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 2429099536866846366, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
@@ -61,6 +71,14 @@ SpriteAtlas:
   - {fileID: 3607535075180461555, guid: 6ba00922274ae1746bc6b2b5dfbaa30c, type: 3}
   - {fileID: 21300000, guid: 4f49b0545daa65644814a4fb43e6cf7d, type: 3}
   - {fileID: 21300000, guid: bcab1ba7cf6928b4dad0c17e1abad498, type: 3}
+  - {fileID: 4294496428159917417, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: 977661479829558958, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: -6199833095573564024, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: 8008908125814002718, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: 2141490783731536781, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: -8714154904816686576, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: -3401858292841433700, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
+  - {fileID: 4471097617319557777, guid: f1bac6d82e6e86148be379d7033fc29c, type: 3}
   - {fileID: 21300000, guid: 84906c9a47f71114e8b793aa58ad6d6c, type: 3}
   - {fileID: -5662007422927484889, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
   - {fileID: -6803488741268343020, guid: d94b6a8bf448d184989c0d620a66aea9, type: 3}
@@ -154,6 +172,8 @@ SpriteAtlas:
   - {fileID: -8816964483051341370, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
   - {fileID: 4715785189793958515, guid: 3871be0f60d65cd4fabb323c4f8367e9, type: 3}
   m_PackedSpriteNamesToIndex:
+  - music note_1
+  - music note_0
   - alan watts sprite sheet_5
   - alan watts sprite sheet_4
   - alan watts sprite sheet_7
@@ -167,6 +187,14 @@ SpriteAtlas:
   - alan watts sprite sheet_10
   - Square
   - crt
+  - Edith_11
+  - Edith_4
+  - Edith_5
+  - Edith_6
+  - Edith_0
+  - Edith_1
+  - Edith_2
+  - Edith_3
   - arrow
   - sprite sheet_8
   - sprite sheet_9
