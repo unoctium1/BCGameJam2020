@@ -4,10 +4,12 @@ public class Game : MonoBehaviour
 {
 
 	[SerializeField]
-	int boardSize = 11;
+	int boardSize = 12;
 
 	[SerializeField]
 	GameBoard board = default(GameBoard);
+
+
 
 	void Awake()
 	{
