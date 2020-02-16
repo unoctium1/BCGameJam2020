@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04d7b093d36ef8d42adf080f296f214b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingRange: 1.5
+  targetingRange: 4.11
   duration: 0.5
   damagePerSecond: 5
   target: {fileID: 0}
