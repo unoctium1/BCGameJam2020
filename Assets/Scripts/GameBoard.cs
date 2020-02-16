@@ -1,91 +1,97 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameBoard : MonoBehaviour {
 
 	[SerializeField]
 	Transform ground = default;
 
-	[SerializeField]
-	GameTile tilePrefab = default;
+    private int[] values;
+    private bool[] keys;
+    private KeyCode[] mykeys;
 
-	Vector2Int size;
-	GameTile[] tiles;
+    const int size = 12;
 
-	Queue<GameTile> searchFrontier = new Queue<GameTile>();
+    [SerializeField]
+    TowerSpace[] towerSpaces;
 
-	public void Initialize(Vector2Int size)
+	public void Initialize()
 	{
-		this.size = size;
-		ground.localScale = new Vector3(size.x, size.y, 1f);
-
-
-		Vector2 offset = new Vector2(
-			(size.x - 1) * 0.5f, (size.y - 1) * 0.5f
-		);
-		tiles = new GameTile[size.x * size.y];
-		for (int i = 0, y = 0; y < size.y; y++)
-		{
-			for (int x = 0; x < size.x; x++,i++)
-			{
-				GameTile tile = tiles[i] = Instantiate(tilePrefab);
-				tile.transform.SetParent(transform, false);
-				tile.transform.localPosition = new Vector3(
-					x - offset.x, y - offset.y, 0f
-				);
-				if (x > 0)
-					GameTile.MakeEastWestNeighbors(tile, tiles[i-1]);
-				if (y > 0)
-					GameTile.MakeNorthSouthNeighbors(tile, tiles[i - size.x]);
-				tile.IsAlternative = (x & 1) == 0;
-				if ((y & 1) == 0)
-				{
-					tile.IsAlternative = !tile.IsAlternative;
-				}
-			}
-		}
-
-		FindPaths();
+        //Build Tower spaces
+        for (int i = 0; i < 12; i++)
+        {
+            towerSpaces[i].BuildTowerSpace();
+        }
 
 	}
 
-	void FindPaths()
-	{
-		foreach(GameTile tile in tiles)
-		{
-			tile.ClearPath();
-		}
-		tiles[0].BecomeDestination();
-		searchFrontier.Enqueue(tiles[0]);
+    void Awake()
+    {
+        values = (int[])System.Enum.GetValues(typeof(KeyCode));
+        keys = new bool[values.Length];
+    }
 
-		while(searchFrontier.Count > 0)
-		{
-			GameTile t = searchFrontier.Dequeue();
-			if (t != null)
-			{
-				if (t.IsAlternative)
-				{
-					searchFrontier.Enqueue(t.GrowPathNorth);
-					searchFrontier.Enqueue(t.GrowPathEast);
-					searchFrontier.Enqueue(t.GrowPathSouth);
-					searchFrontier.Enqueue(t.GrowPathWest);
-				}
-				else
-				{
-					searchFrontier.Enqueue(t.GrowPathWest);
-					searchFrontier.Enqueue(t.GrowPathSouth);
-					searchFrontier.Enqueue(t.GrowPathEast);
-					searchFrontier.Enqueue(t.GrowPathNorth);
 
-				}
-			}
-		}
+    void Update()
+    {
+        #region firing actions switch key
+        if (Input.anyKey)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                towerSpaces[0].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                towerSpaces[1].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                towerSpaces[2].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                towerSpaces[3].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                towerSpaces[4].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                towerSpaces[5].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                towerSpaces[6].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                towerSpaces[7].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                towerSpaces[8].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                towerSpaces[9].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                towerSpaces[10].TowerSpaceFires();
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                towerSpaces[11].TowerSpaceFires();
+            }
 
-		foreach(GameTile t in tiles)
-		{
-			t.ShowPath();
-		}
-	}
+        }
+        #endregion
+
+
+    }
 
 }
