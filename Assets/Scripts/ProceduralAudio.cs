@@ -40,7 +40,6 @@ public class ProceduralAudio : MonoBehaviour
     void Awake()
     {
         sampling_frequency = AudioSettings.outputSampleRate;
-
         lowPassFilter = GetComponent<AudioLowPassFilter>();
         Update();
     }

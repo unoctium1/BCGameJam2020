@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof (ProceduralAudio))]
+[RequireComponent(typeof (AudioSource))]
 public class PlaySound : MonoBehaviour
 {
     public ProceduralAudio pAudio;
+    public AudioSource audioSource;
+    public float time;
     // Start is called before the first frame update
     public void Start()
     {
         pAudio = gameObject.GetComponent<ProceduralAudio>();
-        if (pAudio)
+        audioSource = gameObject.GetComponent<AudioSource>();
+        if (audioSource.enabled)
+        {
+            audioSource.enabled = false;
+            Debug.Log("turned sound off initially");
+        }
+        if (pAudio.enabled)
         {
             pAudio.enabled = false;
             Debug.Log("turned sound off initially");
         }
-            
+
     }
 
     // Update is called once per frame
@@ -28,9 +36,18 @@ public class PlaySound : MonoBehaviour
     public IEnumerator Beep()
     {
         Debug.Log("in the coroutine");
+        if (audioSource.enabled == false)
+        {
+            audioSource.enabled = true;
+
+        }
         if (pAudio.enabled == false)
+        {
             pAudio.enabled = true;
-        yield return new WaitForSeconds(1);
+
+        }
+        yield return new WaitForSeconds(time);
+        audioSource.enabled = false;
         pAudio.enabled = false;
 
     }
