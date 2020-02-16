@@ -82,7 +82,6 @@ public class Game : MonoBehaviour
 				toDelete.EndBehavior();
 			}
 		}
-<<<<<<< HEAD
         #endregion
 
         #region Sound when its individual (commented)
@@ -146,7 +145,5 @@ public class Game : MonoBehaviour
 
 
     }
-=======
-	}
->>>>>>> master
+
 }
