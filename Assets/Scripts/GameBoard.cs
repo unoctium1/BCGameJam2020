@@ -1,20 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameBoard : MonoBehaviour {
 
 	[SerializeField]
 	Transform ground = default(Transform);
 
-	int size;
+    private int[] values;
+    private bool[] keys;
+    private KeyCode[] mykeys;
 
-	public void Initialize(int size)
+    const int size = 12;
+
+    [SerializeField]
+    ButtonBehavior[] buttonBehaviors;
+
+    [SerializeField]
+    GameObject AudioListener;
+
+	public void Initialize()
 	{
-		this.size = size;
-		ground.localScale = new Vector3(size, size, 1f);
-
+        //Build Tower spaces
+        for (int i = 0; i < 12; i++)
+        {
+            buttonBehaviors[i].BuildTowerSpace();
+        }
 
 	}
+
+    void Awake()
+    {
+        values = (int[])System.Enum.GetValues(typeof(KeyCode));
+        keys = new bool[values.Length];
+    }
+
+
+    //void Update()
+    //{
+    //    //#region firing actions switch key
+        
+
+    //}
 
 }

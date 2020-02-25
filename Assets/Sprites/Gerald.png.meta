@@ -1,20 +1,16 @@
 fileFormatVersion: 2
-guid: 8d0ef56c3ad8c384388b1eb90b533b2b
-timeCreated: 1581814700
-licenseType: Pro
+guid: 3871be0f60d65cd4fabb323c4f8367e9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: AlanWatts_0
-    21300002: AlanWatts_1
-    21300004: AlanWatts_2
-    21300006: AlanWatts_idle1
-    21300008: AlanWatts_idle2
-    21300010: AlanWatts_5
-    21300012: AlanWatts_6
-    21300014: AlanWatts_7
-    21300016: AlanWatts_8
-    21300018: AlanWatts_9
-    21300020: AlanWatts_10
+    21300000: Gerald_0
+    21300002: Gerald_1
+    21300004: Gerald_2
+    21300006: Gerald_3
+    21300008: Gerald_4
+    21300010: Gerald_5
+    21300012: Gerald_6
+    21300014: Gerald_7
+    21300016: Gerald_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -40,8 +36,8 @@ TextureImporter:
   textureSettings:
     filterMode: -1
     aniso: -1
-    mipBias: -1
-    wrapMode: 1
+    mipBias: -100
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -62,25 +58,41 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
+    maxTextureSize: 256
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Nintendo 3DS
-    maxTextureSize: 2048
+    maxTextureSize: 256
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,143 +101,117 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AlanWatts_0
+      name: Gerald_0
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1070
-        width: 247
-        height: 661
+        x: 343
+        y: 1430
+        width: 561
+        height: 540
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_1
+      name: Gerald_1
       rect:
         serializedVersion: 2
-        x: 403
-        y: 1070
-        width: 247
-        height: 661
+        x: 932
+        y: 1443
+        width: 523
+        height: 535
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_2
+      name: Gerald_2
       rect:
         serializedVersion: 2
-        x: 697
-        y: 1070
-        width: 232
-        height: 667
+        x: 1483
+        y: 1459
+        width: 515
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_idle1
+      name: Gerald_3
       rect:
         serializedVersion: 2
-        x: 994
-        y: 1060
-        width: 341
-        height: 676
+        x: 763
+        y: 762
+        width: 285
+        height: 544
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_idle2
+      name: Gerald_4
       rect:
         serializedVersion: 2
-        x: 1384
-        y: 1064
-        width: 337
-        height: 676
+        x: 1087
+        y: 766
+        width: 285
+        height: 545
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_5
+      name: Gerald_5
       rect:
         serializedVersion: 2
-        x: 120
-        y: 273
-        width: 264
-        height: 667
+        x: 1482
+        y: 766
+        width: 284
+        height: 545
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_6
+      name: Gerald_6
       rect:
         serializedVersion: 2
-        x: 437
-        y: 268
-        width: 263
-        height: 670
+        x: 258
+        y: 123
+        width: 544
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_7
+      name: Gerald_7
       rect:
         serializedVersion: 2
-        x: 717
-        y: 271
-        width: 264
-        height: 670
+        x: 869
+        y: 114
+        width: 545
+        height: 539
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AlanWatts_8
+      name: Gerald_9
       rect:
         serializedVersion: 2
-        x: 1054
-        y: 277
-        width: 307
-        height: 678
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AlanWatts_9
-      rect:
-        serializedVersion: 2
-        x: 1392
-        y: 285
-        width: 306
-        height: 677
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AlanWatts_10
-      rect:
-        serializedVersion: 2
-        x: 1721
-        y: 281
-        width: 306
-        height: 679
+        x: 1430
+        y: 107
+        width: 515
+        height: 541
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
